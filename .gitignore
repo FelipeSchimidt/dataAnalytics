@@ -1,0 +1,6 @@
+# ignore /node_module
+/js/node_modules
+
+# vscode
+/.vscode
+

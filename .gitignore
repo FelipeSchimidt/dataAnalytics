@@ -5,3 +5,5 @@
 /.vscode
 /js/.vscode
 
+/python/managment/__pycache__/
+

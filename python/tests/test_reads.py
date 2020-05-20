@@ -1,8 +1,5 @@
-def read_files(paths):
-    print(type(paths))
-    """ if type(paths) == 'string':
-        print(type(paths)) """
+from managment_functions from read_files
 
 
-def test_reads():
-    assert read_files("teste")
+def test_open_files():
+    assert read_files()

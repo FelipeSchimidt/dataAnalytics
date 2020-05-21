@@ -6,4 +6,5 @@
 /js/.vscode
 
 /python/managment/__pycache__/
+/python/.pytest_cache
 

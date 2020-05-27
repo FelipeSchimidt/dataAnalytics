@@ -1,15 +1,16 @@
 import os
 
 
-def read_files(self, paths):
-    if paths != 'str':
-        return 'Arquivo não encontrado'
+def read_files(paths):
+    # if paths != 'str':
+    #    print('Arquivo não encontrado')
     with open(paths) as paths_files:
-        files = os.read(paths_files)
-        print(type(files))
+        for lines in paths_files:
+            print(lines)
+            return lines
         # for files in paths_files:
         #    print(type(files))
         #    return files
 
 
-read_files('C:\Developer\dataAnalytics\dados\arquivo_teste_02.wnd')
+read_files('C://Developer//dataAnalytics//dados//arquivo_teste_02.wnd')

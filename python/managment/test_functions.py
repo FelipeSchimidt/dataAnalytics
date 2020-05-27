@@ -1,5 +1,5 @@
 import unittest
-import functions
+from functions import read_files
 
 file_test = ["TOA5", "CHUI 1", "CR1000", "54696",
              "CR1000.Std.27.04", "CPU:Estacv03_CHUI 1.CR1", "35897", "Table1"]
@@ -7,10 +7,6 @@ file_test = ["TOA5", "CHUI 1", "CR1000", "54696",
 
 class TestFunctions(unittest.TestCase):
 
-    def test_type_not_files(self):
-        self.assertFalse(
-            expr=(file_test == functions.read_files(self, 'C:\Developer\dataAnalytics\dados')))
-
-    def test_out_read_files(self):
-        self.assertIs(type(functions.read_files(
-            self, 'C:\Developer\dataAnalytics\dados')), type(file_test))
+    def test_type_files_list(self):
+        self.assertFalse(type(read_files(
+            'c://Developer//dataAnalytics//dados//arquivo_teste_02.wnd')) == 'list')

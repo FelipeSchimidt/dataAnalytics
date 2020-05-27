@@ -1,6 +1,7 @@
 # vscode
 /.vscode
 /js/.vscode
+.env
 
 # javascript
 /js/node_modules

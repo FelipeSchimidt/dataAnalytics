@@ -1,6 +1,13 @@
-# ignore /node_module
-/js/node_modules
-
 # vscode
 /.vscode
+/js/.vscode
+.env
+
+# javascript
+/js/node_modules
+
+# python
+/python/managment/__pycache__/
+/python/.pytest_cache
+/python/credentials.json
 

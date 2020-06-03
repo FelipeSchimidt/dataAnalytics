@@ -1,5 +1,5 @@
-const inputs = "arquivo de texto para teste de leitura";
+const inputs = "Lorem ipsum dolor sit amet";
 
-test("", () => {
-  expect().toBe(inputs);
+test("should read a variable", () => {
+  expect(inputs).toBe("Lorem ipsum dolor sit amet");
 });

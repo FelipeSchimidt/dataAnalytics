@@ -1,6 +1,20 @@
 from flask import Flask, jsonify, request
+import pyrebase
+from dotenv import load_dotenv
+from pathlib import Path
+import os
 
-from controllers.Stations import StationController
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
+config = {
+    "apiKey": os.getenv("ENV_API_KEY"),
+    "authDomain": os.getenv("ENV_AUTH_DOMAIN"),
+    "databaseURL": os.getenv("ENV_DATABASE_URL"),
+    "storageBucket": os.getenv("ENV_STORAGE_BUCKET")
+}
+
+firebase = pyrebase.initialize_app(config)
+db = firebase.database()
 
 app = Flask('__name__')
 
@@ -83,9 +97,14 @@ def delete_person(id):
     return jsonify({'error': 'Pessoa não encontrada'}), 404
 
 
-@app.route('/stations', methods=['GET'])
+@app.route('/stations/', methods=['GET'])
 def stations():
-    return StationController.index(self)
+    dict_station = {}
+    stations = db.child('stations').get()
+    for station in stations.each():
+        dict_station.items(station)
+
+    return jsonify(dict_station)
 
 
 if __name__ == '__main__':

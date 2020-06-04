@@ -23,16 +23,17 @@ db.child("stations").push(data)
 
 
 class StationController:
+
+    """ def __init__(self, database):
+        firebase = pyrebase.initialize_app(config)
+        db = firebase.database()
+ """
     firebase = pyrebase.initialize_app(config)
     db = firebase.database()
 
-    def __init__(self, db):
-        db = self.db
-
     def index(self):
         stations = self.db.child('stations').get()
-        print(stations.val())
-        # return jsonify(stations.val())
+        return jsonify(stations.val())
 
     def show(self):
         pass
@@ -45,3 +46,6 @@ class StationController:
 
     def delete(self):
         pass
+
+
+StationController.index()
